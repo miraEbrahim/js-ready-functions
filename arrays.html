@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Custom Style CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="js/highlight/styles/paraiso-dark.css">
+    <script src="js/highlight/highlight.pack.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
+
+    <title>Vanilla JavaScript</title>
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="container">
+        <header class="blog-header py-3">
+            <div class="row flex-nowrap justify-content-between align-items-center">
+                <div class="col-4 pt-1">
+                    <a class="text-muted" href="#">Subscribe</a>
+                </div>
+                <div class="col-4 text-center">
+                    <a class="blog-header-logo text-dark" href="#">Large</a>
+                </div>
+                <div class="col-4 d-flex justify-content-end align-items-center">
+                    <a class="text-muted" href="#" aria-label="Search">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24" focusable="false"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
+                    </a>
+                    <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="nav-scroller py-1 mb-2">
+            <nav class="nav d-flex justify-content-between">
+                <a class="p-2 text-muted" href="#">Arrays</a>
+                <a class="p-2 text-muted" href="#">Strings</a>
+                <!-- <a class="p-2 text-muted" href="#">Technology</a>
+            <a class="p-2 text-muted" href="#">Design</a>
+            <a class="p-2 text-muted" href="#">Culture</a>
+            <a class="p-2 text-muted" href="#">Business</a>
+            <a class="p-2 text-muted" href="#">Politics</a>
+            <a class="p-2 text-muted" href="#">Opinion</a>
+            <a class="p-2 text-muted" href="#">Science</a>
+            <a class="p-2 text-muted" href="#">Health</a>
+            <a class="p-2 text-muted" href="#">Style</a>
+            <a class="p-2 text-muted" href="#">Travel</a> -->
+            </nav>
+        </div>
+        <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
+            <div class="col-md-8 px-0">
+                <h1 class="display-4 font-italic">Arrays </h1>
+                <p class="lead my-3">
+                    Arrays in JavaScript are high-level list-like objects with a length property and integer properties as indexes.
+                </p>
+                <p class="lead mb-0"><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Arrays" class="text-white font-weight-bold">Continue reading on MDN...</a></p>
+            </div>
+        </div>
+        <!-- Marketing messaging and featurettes
+  ================================================== -->
+        <!-- Wrap the rest of the page in another container to center all the content. -->
+
+        <div class="container marketing">
+
+
+
+
+            <!-- START THE FEATURETTES -->
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette">
+                <div class="col-md-7">
+                    <h2 class="featurette-heading">Arrays' Common Operations</h2>
+                    <p class="lead">Explore how to create an array, retrieve, add, and remove items stored in an array</p>
+                    <p>Arrays consist of square brackets and elements that are separated by commas.</p>
+                    <p>
+                        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#createArray" aria-expanded="false" aria-controls="Create Array">
+                     Create Array
+                </button>
+                    </p>
+                    <div class="collapse" id="createArray">
+                        <div class="card card-body">
+                            <p>There are multiple ways to create an array
+                                <p>
+                                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#arrayLiteral" aria-expanded="false" aria-controls="array Literal">
+                             Array Literal
+                        </button>
+                                </p>
+                                <div class="collapse" id="arrayLiteral">
+                                    <div class="card card-body">
+
+                                        <h5>Using Array Literal </h5>
+                                        <h6>Syntax</h6>
+                                        <pre><code class="JavaScript">var arrayName = [element1, ..., elemntN];</code></pre>
+
+                                        <p>Spaces and line breaks are not important. A declaration can span multiple lines
+                                            <pre><code class="JavaScript">var arrayName = [ 
+    element1, 
+    ..., 
+    elementN
+];</code></pre>
+
+
+                                        </p>
+                                    </div>
+                                </div>
+                                <p>
+                                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#arrayConstructor" aria-expanded="false" aria-controls="array Literal">
+                        Array() constructur
+                    </button>
+                                </p>
+                                <div class="collapse" id="arrayConstructor">
+                                    <div class="card card-body">
+                                        <h5>Using Array constructur </h5>
+                                        <p> the Array constructor creates arrays differently depending on the arguments it receives </p>
+                                        <h5>1. MORE THAN ONE ARGUMENTS: </h5>
+                                        <p>Creates a new array with the arguments as items. The length of the array is set to the number of arguments.</p>
+                                        <h6>Syntax</h6>
+                                        <pre><code>var arrayName = new Array(element1,...,elementN);</code></pre>
+                                        <h6>Example</h6>
+                                        <pre><code>var carCollection = new Array('Camaro SS','Dodge Challenger RT','Dodge Challenger SRT Demon');  </code></pre>
+
+                                        <h5>2. ONLY ONE(NUMBER) ARGUMENT: </h5>
+                                        <p>Creates an array with length set to the number. The constructor just sets the length property of the array to the given length, without setting the keys and those keys are never set and dont exist The constructor
+                                            just sets the length property of the array to the given length, without setting the keys The number must be a positive integer otherwise an error will be thrown. Note that the array has no property keys apart
+                                            from length..</p>
+                                        <h6>Syntax</h6>
+                                        <pre><code> var arrayName = new Array(number);</code></pre>
+                                        <h6>Example</h6>
+                                        <pre><code> var arrayNumber = new Array(5);
+ // [ <5 empty items> ] {length:5}</code></pre>
+
+                                        <h5>3. ONLY ONE(NON-NUMBER) ARGUMENT: </h5>
+                                        <p>Creates a new array with the argument as the only item. The length of the array is set to 1.</p>
+                                        <h6>Syntax</h6>
+                                        <pre><code> var arrayName = new Array('non-number');</code></pre>
+                                        <h6>Example</h6>
+                                        <pre><code> var arrayNumber = new Array('5');
+ // ['5'] {length:1}</code></pre>
+
+                                    </div>
+                                </div>
+                                <p>
+                                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#arrayOf" aria-expanded="false" aria-controls="arrayOf">
+                         Array.of()
+                    </button>
+                                </p>
+                                <div class="collapse" id="arrayOf">
+                                    <div class="card card-body">
+                                        <h5>Using Array.of() </h5>
+                                        <p class="lead">Array.of() will only work in browsers with ES6 support.</p>
+                                        <p>Array.of() behaves in a very similar fashion to Array() constructor, the only difference between Array.of() and Array is in how they handle a single integer argument passed to them
+
+                                        </p>
+                                        <h6>Syntax</h6>
+                                        <pre><code> var arrayName = Array.of(single-element);</code></pre>
+                                        <h6>Example</h6>
+                                        <pre><code> var arrayOf = Array.of(5); // [5]
+ var arrayOfString = Array.of('Hello World');
+ // [ 'Hello World' ]</code></pre>
+
+                                    </div>
+                                </div>
+
+                        </div>
+                    </div>
+                    <p>
+                        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#accessArray" aria-expanded="false" aria-controls="Access Array">
+                     Access Array
+                </button>
+                    </p>
+                    <div class="collapse" id="accessArray">
+                        <div class="card card-body">
+                            <h4>Access (index into) an Array item</h4>
+                            <p>JavaScript arrays are zero-indexed: the first element of an array is at index 0, and the last element is at the index equal to the value of the array's length property minus 1. Using an invalid index number returns undefined.</p>
+                            <p>We can access individual items in the array using bracket notation</p>
+                            <p class="lead">Syntax Errors</p>
+                            <p>Array elements are object properties in the same way that toString is a property, but trying to access an element of an array as "array_name.0" throws a syntax error because propertie names that begin with a digit cannot be
+                                referenced with dot notation
+                            </p>
+                            <h6>Example</h6>
+                            <pre><code>var cars = ['Camaro SS','Challenger RT','Challenger SRT'];
+
+//Access the first item
+var firstCar  = cars[0]; //Camaro SS
+
+//Access the last item
+var lastCar = cars[cars.length - 1]; //Challenger SRT
+
+//Access with dot notation 
+var secondCar = cars.1;   // a syntax error</code></pre>
+                            <p>
+
+                                It's possible to quote the JavaScript array indexes as like this cars['1'] instead of cars[1]), although it's not necessary. The 1 in cars[1] is coerced into a string by the JavaScript engine through an implicit toString conversion. It is, for this reason,
+                                that '1' and '01' would refer to two different slots on the cars object and the following example could be true:
+                            </p>
+                            <pre><code>console.log(cars['1'] != cars['01']);
+// true</code></pre>
+                        </div>
+                    </div>
+                    <p>
+                        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#loopOverArray" aria-expanded="false" aria-controls="Loop Over an Array">
+                     Loop Over Array
+                </button>
+                    </p>
+                    <div class="collapse" id="loopOverArray">
+                        <div class="card card-body">
+                            <h4>Loop over an Array</h4>
+                            <p>Loop over an array to do the same thing to every item in that array.</p>
+                            <pre><code>var cars = ['Camaro SS', 'Challenger RT', 'Challenger SRT'];
+cars.forEach(function(item, index, array) {
+console.log('Item Value : ', item, 'and Its index :', index);
+});
+// Item Value :  Camaro SS and Its index : 0
+// Item Value :  Challenger RT and Its index : 1
+// Item Value :  Challenger SRT and Its index : 2</code></pre>
+                        </div>
+                    </div>
+                    <p>
+                        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#addToArray" aria-expanded="false" aria-controls="Add to Array">
+                            Add to an Array
+                </button>
+                    </p>
+                    <div class="collapse" id="addToArray">
+                        <div class="card card-body">
+
+                            <p>We have two methods that add items to an array, "push()" to the end of an array and "unshift()" to the front of an array</p>
+                            <h6>push(): Add to the end of an Array</h6>
+                            <p>
+                                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#pushToArray" aria-expanded="false" aria-controls="Push To Array">
+                         push()
+                    </button>
+                            </p>
+                            <div class="collapse" id="pushToArray">
+                                <div class="card card-body">
+                                    <p>The push() method adds one or more elements to the end of an array and returns the new length of the array</p>
+                                    <p>The push method relies on a length property to determine where to start inserting the given values. If the length property cannot be converted into a number, the index used is 0. This includes the possibility of length
+                                        being nonexistent, in which case length will also be created</p>
+                                    <p>push() </p>
+
+                                    <h5>Syntax</h5>
+                                    <pre><code> arrayName.push(element1[, ...[, elementN]]);</code></pre>
+
+                                    <h5>Parameters</h5>
+                                    <p class="lead">elementN</p>
+                                    <p>The elements to add to the end of the array.
+                                        <p class="lead">Return value </p>
+                                        <p>The new length property of the object upon which the method was called</p>
+                                        <p>push() doesnt return a new array </p>
+
+
+                                        <pre><code class="JavaScript">  var sports = ['soccer', 'baseball']; 
+  var total = sports.push('football', 'swimming');
+  console.log(sports); // ['soccer', 'baseball', 'football', 'swimming']
+  console.log(total);  // 4 </code></pre>
+                                </div>
+                            </div>
+                            <h6>Add to the front of an Array</h6>
+                            <h5>Remove</h5>
+                            <p>We have two methods "pop()" and "shift()" that remove items of an array either from the end or front of an array</p>
+                            <h6>Remove from the end of an Array</h6>
+                            <h6>Remove from the front of an Array</h6>
+                            <h6>Remove an item by index position</h6>
+
+                            </li>
+
+                            <li>
+                                <h4>Find the index of an item in the Array</h4>
+                                <p></p>
+                            </li>
+                            <li>
+                                <p></p>
+                            </li>
+                            <li>
+                                <h4>Copy an Array</h4>
+                                <p></p>
+                            </li>
+                            <li>
+                                <h4></h4>
+                                <p></p>
+                            </li>
+                            <li>
+                                <h4></h4>
+                                <p></p>
+                            </li>
+                            <li>
+                                <h4></h4>
+                                <p></p>
+                            </li>
+                            <li>
+                                <h4>Remove from the front of an Array</h4>
+                                <p></p>
+                            </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-5">
+                            <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+                        </div>
+                    </div>
+
+                    <hr class="featurette-divider">
+                    <div class="row featurette">
+                        <div class="col-md-7 order-md-2">
+                            <p>
+                                <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                Link with href
+              </a>
+                                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                Button with data-target
+              </button>
+                            </p>
+                            <div class="collapse" id="collapseExample">
+                                <div class="card card-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="featurette-divider">
+                    <div class="row featurette">
+                        <div class="col-md-7 order-md-2">
+                            <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for yourself.</span></h2>
+                            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+                        </div>
+                        <div class="col-md-5 order-md-1">
+                            <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+                        </div>
+                    </div>
+
+                    <hr class="featurette-divider">
+
+                    <div class="row featurette">
+                        <div class="col-md-7">
+                            <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
+                            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+                        </div>
+                        <div class="col-md-5">
+                            <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+                        </div>
+                    </div>
+
+                    <hr class="featurette-divider">
+
+                    <!-- /END THE FEATURETTES -->
+
+                </div>
+                <!-- /.container -->
+
+                <div id="occurrence-of-element-in-array">
+                </div>
+                <div id="exist-or-add-elem-arr"></div>
+
+                <div id="count-char-in-string"></div>
+
+                <div id="compare-elements"></div>
+
+
+                <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+                <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+                <script src="js/arrays.js" async defer></script>
+</body>
+
+</html>∏
